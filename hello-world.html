@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10121b">
+  <title>Hello, World — A little moment of wonder</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+    :root { color-scheme: dark; --ink: #f5f2ff; --muted: #b8b4c9; --gold: #f7d28b; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; display: grid; place-items: center; overflow: hidden;
+      color: var(--ink); font-family: 'DM Sans', sans-serif;
+      background: radial-gradient(ellipse at 50% 44%, #292342 0%, #171826 45%, #10121b 78%);
+    }
+    body::before, body::after { content: ''; position: fixed; inset: 0; pointer-events: none; }
+    body::before {
+      opacity: .38;
+      background-image: radial-gradient(1px 1px at 8% 18%, #fff 99%, transparent), radial-gradient(1.5px 1.5px at 83% 24%, #f7d28b 99%, transparent), radial-gradient(1px 1px at 26% 76%, #fff 99%, transparent), radial-gradient(1px 1px at 72% 84%, #fff 99%, transparent), radial-gradient(1px 1px at 94% 63%, #fff 99%, transparent), radial-gradient(1px 1px at 15% 53%, #f7d28b 99%, transparent), radial-gradient(1px 1px at 56% 11%, #fff 99%, transparent);
+      background-size: 320px 280px;
+    }
+    body::after { background: linear-gradient(120deg, transparent 35%, rgba(255,255,255,.025) 50%, transparent 65%); }
+    .card {
+      position: relative; width: min(760px, calc(100vw - 36px)); padding: clamp(38px, 8vw, 82px) clamp(26px, 8vw, 82px);
+      text-align: center; border: 1px solid rgba(255,255,255,.13); border-radius: 28px;
+      background: linear-gradient(145deg, rgba(255,255,255,.075), rgba(255,255,255,.025));
+      box-shadow: 0 35px 100px rgba(0,0,0,.38), inset 0 1px rgba(255,255,255,.08);
+      backdrop-filter: blur(14px); animation: arrive 1s cubic-bezier(.2,.8,.2,1) both;
+    }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--gold); font-size: 11px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; }
+    .eyebrow::before, .eyebrow::after { content: ''; width: 24px; height: 1px; background: currentColor; opacity: .7; }
+    h1 { margin: 25px 0 13px; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(58px, 12vw, 108px); font-weight: 500; letter-spacing: -.055em; line-height: .98; }
+    h1 span { display: block; color: var(--gold); font-style: italic; }
+    .rule { width: 42px; height: 2px; margin: 30px auto 22px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+    p { max-width: 430px; margin: 0 auto; color: var(--muted); font-size: clamp(15px, 2.3vw, 17px); line-height: 1.8; }
+    .button { display: inline-flex; align-items: center; gap: 10px; margin-top: 34px; padding: 13px 20px; border: 1px solid rgba(247,210,139,.45); border-radius: 999px; color: var(--gold); font-size: 13px; font-weight: 600; letter-spacing: .03em; transition: .25s ease; }
+    .button:hover { transform: translateY(-2px); background: rgba(247,210,139,.1); box-shadow: 0 8px 30px rgba(247,210,139,.12); }
+    .spark { display: inline-block; font-size: 16px; animation: twinkle 2.5s ease-in-out infinite; }
+    footer { position: fixed; bottom: 24px; color: rgba(245,242,255,.42); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+    @keyframes arrive { from { opacity: 0; transform: translateY(18px) scale(.985); } to { opacity: 1; transform: translateY(0) scale(1); } }
+    @keyframes twinkle { 50% { transform: rotate(25deg) scale(1.2); opacity: .65; } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="eyebrow">A little beginning</div>
+    <h1>Hello,<span>World.</span></h1>
+    <div class="rule" aria-hidden="true"></div>
+    <p>Every great idea starts somewhere. Here’s to the first line, the next adventure, and all the wonderful things still waiting to be made.</p>
+    <div class="button"><span class="spark" aria-hidden="true">✦</span> Make something wonderful</div>
+  </main>
+  <footer>Made for the joy of beginning</footer>
+</body>
+</html>
